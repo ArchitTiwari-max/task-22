@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Quiz App using JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
-<body>
-    <div class="alert">Alert</div>
-    <div class="btn startBtn">Start</div>
+
+<body class="bg-success">
     <div class="container">
-        <h1>Let's play a Quiz Game</h1>
-        <div class="question"></div>
-        <div class="choices"></div>
-        <button class="btn nextBtn">Next</button>
-        <div class="scoreCard"></div>
-        <div class="timer"></div>
+        <h1 class="text-center">Login Details</h1>
+
+        <div class="col-md-8 col-md-offset-2">
+            <br />
+            Enter Email:
+            <input type="text" class="form-control" name="" id="email"><br />
+            Enter Pass:
+            <input type="text" class="form-control" name="" id="pass"><br />
+            <br />
+            <button type="button" onclick="login()" class="form-control btn btn-primary"> Login </button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+
+var a=localStorage.getItem("abc");
+
+if(a=="save password"){
+    window.location.href="home.html";
+}
+
+
+
+function login(){
+
+
+
+    var email=document.getElementById("email").value;
+    var pass=document.getElementById("pass").value;
+
+    var email1=localStorage.getItem("email1");
+    var pass1=localStorage.getItem("pass1");
+
+    if(email==email1 && pass==pass1){
+        
+        localStorage.setItem("code","secret");
+        window.location.href="home.html";
+
+    }else {
+        alert("email and pass is incorrect")
+    }
+
+}
+
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
